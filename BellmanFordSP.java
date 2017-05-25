@@ -1,5 +1,9 @@
-import edu.princeton.cs.algs4.*;
+import edu.princeton.cs.algs4.EdgeWeightedDigraph;
 import edu.princeton.cs.algs4.DirectedEdge;
+import edu.princeton.cs.algs4.Queue;
+import edu.princeton.cs.algs4.Stack;
+import edu.princeton.cs.algs4.EdgeWeightedDirectedCycle;
+
 
 /**
  * Created by mofma on 2017/5/22.
@@ -28,7 +32,7 @@ public class BellmanFordSP{
         {
             int v = queue.dequeue();
             onQ[v] = false;
-            relax(v);
+            relax(G, v);
         }
     }
 
@@ -68,8 +72,8 @@ public class BellmanFordSP{
         for (int v = 0; v < V; v++)
             if (edgeTo[v] != null)
                 spt.addEdge(edgeTo[v]);
-        EdgeWeightedCycle cf;
-        cf = new EdgeWeightedCycle(spt);
+        EdgeWeightedDirectedCycle cf;
+        cf = new EdgeWeightedDirectedCycle(spt);
         cycle = cf.cycle();
     }
 
