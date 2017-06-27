@@ -92,7 +92,7 @@ public class Huffman {
                 pq.insert(new Node(i, freq[i], null,null));
         if (pq.size() == 1)
             if (freq['\0'] == 0 ) pq.insert(new Node('\0', 0, null, null));
-            else pq.insert(new Node('\1', 0, null, null);
+            else pq.insert(new Node('\1', 0, null, null));
         while (pq.size() > 1) {
             Node left = pq.delMin();
             Node right = pq.delMin();
